@@ -1,0 +1,18 @@
+%table
+  %thead
+    %tr
+      %th pid
+      %th user
+      %th ip
+      %th status
+      %th time
+      %th query
+  %tbody
+    - @processes.each do |process|
+      %tr
+        %td= process[:pid]
+        %td= process[:user]
+        %td= process[:ip]
+        %td= process[:status]
+        %td= process[:time]
+        %td= process[:query]

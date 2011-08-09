@@ -3,16 +3,20 @@
     %tr
       %th pid
       %th user
-      %th ip
-      %th status
+      %th location
+      %th database
+      %th command
       %th time
-      %th query
+      %th state
+      %th info
   %tbody
     - @processes.each do |process|
       %tr
         %td= process[:pid]
         %td= process[:user]
-        %td= process[:ip]
-        %td= process[:status]
+        %td= process[:location]
+        %td= process[:database]
+        %td= process[:command]
         %td= process[:time]
-        %td= process[:query]
+        %td= process[:state]
+        %td= process[:info]

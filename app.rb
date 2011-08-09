@@ -14,16 +14,19 @@ connection.reconnect = true
 
 get '/' do
   @processes = []
-  connection.list_processes.each do |pid, user, ip, status, time, query|
+  connection.list_processes.each do |pid, user, location, database, command, time, state, info|
     @processes << {
       :pid => pid,
       :user => user,
-      :ip => ip,
-      :status => status,
+      :location => location,
+      :database => database,
+      :command => command,
       :time => time,
-      :query => query
+      :state => state,
+      :info => info
     }
   end
+
   
   haml :index
 end
